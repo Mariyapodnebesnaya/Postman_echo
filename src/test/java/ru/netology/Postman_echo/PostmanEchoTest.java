@@ -23,5 +23,37 @@ public class PostmanEchoTest {
                 .body("data", equalTo(value));
     }
 
+    @Test
+    void postRequestTest() {
+        // Given - When - Then
+        // Предусловия
+        given()
+                .baseUri("https://postman-echo.com")
+                .contentType("text/plain; charset=UTF-8")
+                .body("пост запрос")
+                .when()
+                .post("/post")
+                .then()
+                .statusCode(200)
+                .body("data", equalTo("пост запрос"))
+        ;
+    }
+
+    @Test
+    void postRequestTestError() {
+        // Given - When - Then
+        // Предусловия
+        given()
+                .baseUri("https://postman-echo.com")
+                .contentType("text/plain; charset=UTF-8")
+                .body("пост запрос")
+                .when()
+                .post("/post")
+                .then()
+                .statusCode(200)
+                .body("data", equalTo("запрос"))
+        ;
+    }
+
 
 }
