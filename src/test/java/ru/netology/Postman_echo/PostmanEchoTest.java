@@ -22,6 +22,7 @@ public class PostmanEchoTest {
                 .statusCode(200)
                 .body("data", equalTo(value));
     }
+
     @Test
     void postRequestTest() {
         // Given - When - Then
@@ -34,8 +35,7 @@ public class PostmanEchoTest {
                 .post("/post")
                 .then()
                 .statusCode(200)
-                .body("data", equalTo("пост запрос"))
-        ;
+                .body("data", equalTo("пост запрос"));
     }
 
 }
