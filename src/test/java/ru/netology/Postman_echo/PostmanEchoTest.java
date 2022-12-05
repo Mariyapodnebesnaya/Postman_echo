@@ -37,4 +37,5 @@ public class PostmanEchoTest {
                 .statusCode(200)
                 .body("data", equalTo("пост запрос"));
     }
+
 }
